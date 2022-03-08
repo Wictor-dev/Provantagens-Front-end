@@ -6,9 +6,15 @@ import { Category } from "../Category";
 export function Categories(){
     return (
         <View style={styles.container}>
-        <Text>Categorias</Text>
+        <Text style={styles.title}>Categorias</Text>
         <ScrollView horizontal style={styles.categoriesContainer}>
             <Category title="Saúde" icon={<Ionicons size={60} color="#fff" name="medical" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
+            <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
             <Category title="Nutrição" icon={<Ionicons size={60} color="#fff" name="nutrition" />} />
         </ScrollView>
         </View>

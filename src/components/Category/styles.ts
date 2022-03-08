@@ -4,8 +4,7 @@ import { theme } from "../../global/styles/theme";
 export const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        marginRight: 5,
-        marginLeft: 5
+        padding: 5
     },
     categoryIcon: {
         backgroundColor: theme.colors.primaryLight,

@@ -11,6 +11,14 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: theme.colors.primary,
         paddingTop: 50
+    },
+    promotion:{
+        marginTop: 20,
+        marginLeft: 10,
+    },
+
+    titlePromotion: {
+        fontSize: 18
     }
 
 })
