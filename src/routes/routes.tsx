@@ -1,14 +1,53 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Entypo, AntDesign, FontAwesome5, Ionicons } from '@expo/vector-icons'
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { theme } from "../global/styles/theme";
+import { Favorites } from "../pages/Favorites";
 import { Home } from "../pages/Home";
 
 import { Offer } from "../pages/Offer";
+import { Perfil } from "../pages/Perfil";
 
-const Stack = createStackNavigator()
+export type RootStackParamList = {
+    Home: undefined;
+    Offer: undefined;
+    MenuBottom: undefined;
+};
+
+
+const Stack = createStackNavigator<RootStackParamList>()
+const Tab = createBottomTabNavigator();
+
+function Tabs(){
+    return (
+        <Tab.Navigator
+            screenOptions={({route}) => ({
+                tabBarIcon: ({focused, color, size}) => {
+                    if (route.name === 'Home') {
+                        return <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={theme.colors.white} />
+                    } else if (route.name === 'Favoritos') {
+                        return <AntDesign name={focused ? 'heart' : 'hearto'} size={size} color={theme.colors.white} />
+                    } else if (route.name === 'Perfil') {
+                        return <FontAwesome5 name={focused ? 'user-alt' : 'user'} size={size} color={theme.colors.white} /> 
+                    }
+                },
+                tabBarStyle: {backgroundColor: theme.colors.primary},
+                tabBarLabelStyle: {color: theme.colors.white},
+            })}
+        >
+          <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
+          <Tab.Screen name="Favoritos" component={Favorites} />
+          <Tab.Screen name="Perfil" component={Perfil} />
+        </Tab.Navigator>
+    )
+}
+
 export default function Routes(){
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} />
+            <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
             <Stack.Screen name="Offer" component={Offer} />
         </Stack.Navigator>
     )
