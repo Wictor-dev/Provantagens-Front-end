@@ -11,7 +11,7 @@ import { Perfil } from "../pages/Perfil";
 
 export type RootStackParamList = {
     Home: undefined;
-    Offer: undefined;
+    Oferta: undefined;
     MenuBottom: undefined;
 };
 
@@ -19,7 +19,7 @@ export type RootStackParamList = {
 const Stack = createStackNavigator<RootStackParamList>()
 const Tab = createBottomTabNavigator();
 
-function Tabs(){
+export default function Tabs(){
     return (
         <Tab.Navigator
             screenOptions={({route}) => ({
@@ -36,19 +36,24 @@ function Tabs(){
                 tabBarLabelStyle: {color: theme.colors.white},
             })}
         >
-          <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
+          <Tab.Screen name="Home" component={Routes} options={{headerShown: false}}/>
           <Tab.Screen name="Favoritos" component={Favorites} />
           <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     )
 }
 
-export default function Routes(){
+function Routes(){
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} />
+        <Stack.Navigator screenOptions={{
+            cardStyle: {backgroundColor: theme.colors.background}
+        }}>
+            {/* <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} /> */}
             <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
-            <Stack.Screen name="Offer" component={Offer} />
+            <Stack.Screen name="Oferta" component={Offer} options={{
+                headerTitleAlign: 'center',
+                headerStyle: {backgroundColor: 'rgba(255,255,255,0.2)'},
+            }} />
         </Stack.Navigator>
     )
 }

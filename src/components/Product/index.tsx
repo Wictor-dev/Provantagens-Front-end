@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../routes/routes";
 
-type ProductProps = {
+export type ProductProps = {
   name: string
   price: number
   category: string
@@ -13,12 +13,12 @@ type ProductProps = {
   cover: any
 };
 
-type OfferScreenProps = StackNavigationProp<RootStackParamList, 'Offer'>
+type OfferScreenProps = StackNavigationProp<RootStackParamList, 'Oferta'>
 
 export function Product({ name, price, category, description, cover }: ProductProps) {
   const navigation = useNavigation<OfferScreenProps>()
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Offer')} >
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Oferta')} >
       <View style={styles.imageContainer}>
         <Image source={cover} style={styles.img} />
       </View>

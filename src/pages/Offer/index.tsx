@@ -1,7 +1,17 @@
-import { Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import {ProductProps} from '../../components/Product/index';
 
-export function Offer(){
+
+export function Offer({name} : ProductProps){
     return (
-        <Text>Oferta</Text>
+        <View style={styles.container}>
+            <Text>Oferta</Text>
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        
+    }
+})
