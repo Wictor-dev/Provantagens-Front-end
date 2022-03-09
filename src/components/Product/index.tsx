@@ -1,6 +1,7 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, TouchableOpacity} from "react-native";
 import { cutString } from "../../functions/cutString";
 import { styles } from "./styles";
+import { useNavigation } from '@react-navigation/core'
 
 type ProductProps = {
   name: string
@@ -11,8 +12,9 @@ type ProductProps = {
 };
 
 export function Product({ name, price, category, description, cover }: ProductProps) {
+  const navigation = useNavigation()
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Offer')}>
       <View style={styles.imageContainer}>
         <Image source={cover} style={styles.img} />
       </View>
@@ -27,6 +29,6 @@ export function Product({ name, price, category, description, cover }: ProductPr
       <View style={styles.descriptionContainer}>
           <Text style={styles.description}>{cutString(description, 45)}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
