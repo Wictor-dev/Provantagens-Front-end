@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
     container:{
@@ -14,11 +15,22 @@ export const styles = StyleSheet.create({
     },
     content:{
         paddingLeft: 15,
-        paddingRight: 15
+        paddingRight: 15,
+        display: 'flex'
     },
     title: {
-        fontWeight: 'bold',
+        fontWeight: '400',
         fontSize: 24,
-        
+    },
+    description: {
+        fontSize: 18
+    },
+    offerLimit: {
+        color: theme.colors.red,
+        alignSelf: 'flex-end'
+    },
+    price: {
+        marginTop: 5,
+        fontSize: 24
     }
 })

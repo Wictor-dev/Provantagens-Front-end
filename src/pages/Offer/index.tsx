@@ -24,9 +24,10 @@ export function Offer(){
                 <Image source={route.params.cover} style={styles.img} />
             </View>
             <View style={styles.content}>
+                <Text style={styles.offerLimit}>Essa oferta acaba em 13:25:59</Text>
                 <Text style={styles.title}>{route.params.name}</Text>
-                <Text>{cutString(route.params.description, 100)}</Text>
-                <Text>R$ {route.params.price.toFixed(2)}</Text>
+                <Text style={styles.description}>{cutString(route.params.description, 100)}</Text>
+                <Text style={styles.price}>R$ {route.params.price.toFixed(2)}</Text>
             </View>
         </ScrollView>
     )

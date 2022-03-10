@@ -10,7 +10,7 @@ import { Offer } from "../pages/Offer";
 import { Perfil } from "../pages/Perfil";
 
 export type RootStackParamList = {
-    Home: undefined;
+    HomeScreen: undefined;
     Oferta: {
         name: string
         price: number
@@ -55,7 +55,7 @@ function Routes(){
             cardStyle: {backgroundColor: theme.colors.background}
         }}>
             {/* <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} /> */}
-            <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+            <Stack.Screen name="HomeScreen" component={Home} options={{headerShown: false}} />
             <Stack.Screen name="Oferta" component={Offer} options={{
                 headerTitleAlign: 'center',
                 headerStyle: {backgroundColor: theme.colors.primary},
