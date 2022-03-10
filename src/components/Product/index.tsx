@@ -1,24 +1,41 @@
-import { Image, Text, View, TouchableOpacity} from "react-native";
+import { Image, Text, View, TouchableOpacity } from "react-native";
 import { cutString } from "../../functions/cutString";
 import { styles } from "./styles";
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../routes/routes";
 
 export type ProductProps = {
-  name: string
-  price: number
-  category: string
-  description: string
-  cover: any
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  cover: any;
 };
 
-type OfferScreenProps = StackNavigationProp<RootStackParamList, 'Oferta'>
+type OfferScreenProps = StackNavigationProp<RootStackParamList, "Oferta">;
 
-export function Product({ name, price, category, description, cover }: ProductProps) {
-  const navigation = useNavigation<OfferScreenProps>()
+export function Product({
+  name,
+  price,
+  category,
+  description,
+  cover,
+}: ProductProps) {
+  const navigation = useNavigation<OfferScreenProps>();
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Oferta')} >
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate("Oferta", {
+          name,
+          price,
+          category,
+          description,
+          cover,
+        })
+      }
+    >
       <View style={styles.imageContainer}>
         <Image source={cover} style={styles.img} />
       </View>
@@ -31,7 +48,7 @@ export function Product({ name, price, category, description, cover }: ProductPr
         <Text style={styles.category}>{category}</Text>
       </View>
       <View style={styles.descriptionContainer}>
-          <Text style={styles.description}>{cutString(description, 45)}</Text>
+        <Text style={styles.description}>{cutString(description, 45)}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -11,7 +11,13 @@ import { Perfil } from "../pages/Perfil";
 
 export type RootStackParamList = {
     Home: undefined;
-    Oferta: undefined;
+    Oferta: {
+        name: string
+        price: number
+        category: string
+        description: string
+        cover: any
+    };
     MenuBottom: undefined;
 };
 
@@ -52,7 +58,7 @@ function Routes(){
             <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
             <Stack.Screen name="Oferta" component={Offer} options={{
                 headerTitleAlign: 'center',
-                headerStyle: {backgroundColor: 'rgba(255,255,255,0.2)'},
+                headerStyle: {backgroundColor: theme.colors.primary},
             }} />
         </Stack.Navigator>
     )
