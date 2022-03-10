@@ -32,5 +32,9 @@ export const styles = StyleSheet.create({
     price: {
         marginTop: 5,
         fontSize: 24
-    }
+    },
+    starsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
 })
