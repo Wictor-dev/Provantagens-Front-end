@@ -6,6 +6,7 @@ import { cutString } from "../../functions/cutString";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { theme } from "../../global/styles/theme";
 import { Button } from "../../components/Button";
+import { Slider } from "../../components/Slider";
 
 type ParamList = {
     Oferta: {
@@ -22,7 +23,8 @@ export function Offer(){
     return (
         <ScrollView style={styles.container}>
             <View style={styles.imgContainer}> 
-                <Image source={route.params.cover} style={styles.img} />
+                {/* <Image source={route.params.cover} style={styles.img} /> */}
+                <Slider />
             </View>
             <View style={styles.content}>
                 <Text style={styles.offerLimit}>Essa oferta acaba em 13:25:59</Text>

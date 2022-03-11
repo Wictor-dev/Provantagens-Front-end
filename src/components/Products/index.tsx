@@ -11,7 +11,7 @@ export function Products(){
                 name="Fone de ouvido" 
                 price={38.99} 
                 category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro"
+                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro"
                 cover={logo}
             />
             <Product 
