@@ -40,6 +40,8 @@ export default function Tabs(){
                 },
                 tabBarStyle: {backgroundColor: theme.colors.primary},
                 tabBarLabelStyle: {color: theme.colors.white},
+                headerTitleAlign: 'center',
+                headerStyle: {backgroundColor: theme.colors.primary}
             })}
         >
           <Tab.Screen name="Home" component={Routes} options={{headerShown: false}}/>
