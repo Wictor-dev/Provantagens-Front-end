@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         width: '90%',
         height: 38,
-        borderWidth: 0.5,
         borderRadius: 10,
         backgroundColor: theme.colors.white,
         flexDirection: 'row',
@@ -13,7 +12,7 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         justifyContent: 'space-between',
-        
+        ...theme.shadow
         // elevation: 10,
         // shadowColor: '#00000054',
         // shadowRadius: 13.16,

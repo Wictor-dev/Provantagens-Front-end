@@ -3,7 +3,7 @@ import { cutString } from "../../functions/cutString";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../../routes/routes";
+import { RootStackParamList } from "../../routes/app.routes";
 
 export type ProductProps = {
   name: string;
@@ -13,7 +13,7 @@ export type ProductProps = {
   cover: any;
 };
 
-type OfferScreenProps = StackNavigationProp<RootStackParamList, "Oferta">;
+export type OfferScreenProps = StackNavigationProp<RootStackParamList, "Oferta">;
 
 export function Product({
   name,

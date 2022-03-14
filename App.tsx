@@ -4,13 +4,12 @@ import { Home } from './src/pages/Home';
 import { theme } from './src/global/styles/theme';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes/routes';
-import Tabs from './src/routes/routes';
 
 export default function App() {
   return (
     // <View style={styles.container}>
       <NavigationContainer>
-        <Tabs />
+        <Routes />
         <StatusBar style="auto" backgroundColor={theme.colors.primaryDarker} />
       </NavigationContainer>
     // </View>
