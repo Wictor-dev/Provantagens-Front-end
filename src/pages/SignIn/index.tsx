@@ -4,31 +4,26 @@ import { Ionicons } from '@expo/vector-icons'
 import styled from "styled-components/native";
 import { Button } from "../../components/Button";
 import { theme } from "../../global/styles/theme";
-import { useNavigation } from "@react-navigation/native";
-import { AuthRootStackParamList } from "../../routes/auth.routes";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { StackNavigationProp } from "@react-navigation/stack";
-
-export type SignInScreenProps = StackNavigationProp<AuthRootStackParamList, "SignIn">;
-
-export function LogIn() {
-    const navigation = useNavigation<SignInScreenProps>()
+export function SignIn() {
     return (
         <Container>
-            <TitleText>Login</TitleText>
+            <TitleText>Cadastro</TitleText>
           
             <View>
                 <View style={{ marginBottom: 20 }}>
-                    <Input label="Email" icon={<Ionicons name='mail' size={20} />} placeholder="Digite o email" maxLength={50} />
+                    <Input label="Nome" icon={<Ionicons name='person' size={20} />} placeholder="Digite o nome" maxLength={50} />
                 </View>
-                <Input label="Senha" icon={<Ionicons name="key" size={20} />} placeholder="********" password maxLength={8} />
+                <View style={{ marginBottom: 20 }}>
+                    <Input label="Email" icon={<Ionicons name="mail" size={20} />} placeholder="Digite o email" maxLength={50} />
+                </View>
+                <Input label="Senha" icon={<Ionicons name='key' size={20} />} placeholder="********" password maxLength={8} />
             </View>
             <View style={{marginTop: 50, alignItems: 'center'}}>
                 <Button title="Entrar" color={theme.colors.primary} />
             </View>
             <View style={{justifyContent: 'center', marginTop: 33, flexDirection: 'row'}}>
-                <Text>Ainda não possui conta?</Text>
-                <Text onPress={() => navigation.navigate('SignIn')} style={{fontWeight: 'bold'}}> Cadastre-se agora</Text>
+                <Text>Já possui conta?</Text>
+                <Text style={{fontWeight: 'bold'}}> Faça login</Text>
             </View>
         </Container>
     )

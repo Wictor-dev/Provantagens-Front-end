@@ -8,7 +8,6 @@ import { Home } from "../pages/Home";
 
 import { Offer } from "../pages/Offer";
 import { Perfil } from "../pages/Perfil";
-import { LogIn } from "../pages/LogIn";
 
 export type RootStackParamList = {
     HomeScreen: undefined;
@@ -58,7 +57,7 @@ function AppRoutes(){
             cardStyle: {backgroundColor: theme.colors.background}
         }}>
             {/* <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} /> */}
-            <Stack.Screen name="HomeScreen" component={LogIn} options={{headerShown: false}} />
+            <Stack.Screen name="HomeScreen" component={Home} options={{headerShown: false}} />
             <Stack.Screen name="Oferta" component={Offer} options={{
                 headerTitleAlign: 'center',
                 headerStyle: {backgroundColor: theme.colors.primary},
