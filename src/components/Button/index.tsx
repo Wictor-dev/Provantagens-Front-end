@@ -3,11 +3,12 @@ import styled from 'styled-components/native'
 import {theme} from '../../global/styles/theme'
 type ButtonProps = {
     color: string,
-    title: string
+    title: string,
+    onPress: () => void
 }
-export function Button({color, title}: ButtonProps){
+export function Button({color, title, onPress}: ButtonProps){
     return (
-        <Container color={color}>
+        <Container color={color} onPress={onPress}>
             <Title>{title}</Title>
         </Container>
     )

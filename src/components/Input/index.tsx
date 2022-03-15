@@ -3,16 +3,19 @@ import { TextInput } from "react-native-gesture-handler";
 import styled from "styled-components/native";
 import { theme } from "../../global/styles/theme";
 import { Ionicons } from '@expo/vector-icons'
-import { useState } from "react";
+import React, { useState } from "react";
 type InputProps = {
     label: string;
     placeholder: string;
     icon: any;
     password?: boolean;
     maxLength: number;
+    state?: string;
+    handleState?: React.Dispatch<React.SetStateAction<string>>;
+    disabled?: boolean
 };
 
-export function Input({ label, placeholder, icon, password = false, maxLength }: InputProps) {
+export function Input({ label, placeholder, icon, password = false, maxLength, state, handleState, disabled = false}: InputProps) {
     const [textVisible, setTextVisible] = useState(password)
     const handleVisibility = () => {
         setTextVisible(!textVisible)
@@ -28,11 +31,15 @@ export function Input({ label, placeholder, icon, password = false, maxLength }:
                     placeholder={placeholder}
                     secureTextEntry={textVisible}
                     style={password ? { marginLeft: 10, fontSize: 18, width: '85%' } : { marginLeft: 10, fontSize: 18, width: '100%' }}
-                    maxLength={maxLength} />
+                    maxLength={maxLength}
+                    value={state}
+                    onChangeText={handleState}
+                    editable={!disabled}
+                />
                 {textVisible ? (
-                    <Ionicons name="ios-eye" size={20} onPress={handleVisibility} />
+                    <Ionicons name="ios-eye" size={20} onPress={handleVisibility} style={password ? undefined : {display: 'none'}} />
                 ) : (
-                    <Ionicons name="ios-eye-off" size={20} onPress={handleVisibility} />
+                    <Ionicons name="ios-eye-off" size={20} onPress={handleVisibility} style={password ? undefined : {display: 'none'}} />
                 )}
             </InputArea>
         </Container>
