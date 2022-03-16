@@ -8,7 +8,11 @@ import { useState } from "react";
 import { useAuth } from "../../../contexts/authContexts";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import { AuthRootStackParamList } from "../../../routes/auth.routes";
+import { StackNavigationProp } from "@react-navigation/stack";
 
+type FinishScreenProp = StackNavigationProp<AuthRootStackParamList, 'FinishSignUp'>
 export function ContinueSignUp() {
     const [registration, setRegistration] = useState('')
     const [cpf, setCpf] = useState('')
@@ -32,7 +36,7 @@ export function ContinueSignUp() {
 
       
     const {signUp} = useAuth()
-
+    const navigation = useNavigation<FinishScreenProp>()
     return (
         <Container>
             <TitleText>Cadastro</TitleText>
@@ -98,7 +102,7 @@ export function ContinueSignUp() {
                 </View>
             </View>
             <View style={{marginTop: 50, alignItems: 'center'}}>
-                <Button title="CADASTRAR" color={theme.colors.primary} onPress={() => {}} />
+                <Button title="CADASTRAR" color={theme.colors.primary} onPress={() => {navigation.navigate('FinishSignUp')}} />
             </View>
             <View style={{justifyContent: 'center', marginTop: 33, flexDirection: 'row'}}>
                 <Text>Já possui conta?</Text>
