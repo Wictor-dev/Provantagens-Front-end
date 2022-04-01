@@ -3,7 +3,7 @@ import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
   container: {
-    width: 180,
+    width: 170,
     height: 240,
     borderRadius: 10,
     borderWidth: 0.5,
@@ -21,35 +21,27 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 10
   },
   titleContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingLeft: 5,
-      paddingRight: 5,
       marginTop: 5
   },
   title: {
-    fontSize: 14,
-    fontWeight: "bold"
+    fontSize: 16,
+    fontWeight: "bold",
+    color: theme.colors.main09
   },
   categoryContainer: {
-      paddingLeft: 10,
       flexDirection: 'row',
       alignItems: "center"
-  },
-  circle: {
-      borderRadius: 5,
-      width:5,
-      height: 5,
-      backgroundColor: theme.colors.black
   },
   category: {
       fontWeight: '200',
       marginLeft: 2
   },
-  descriptionContainer: {
-      paddingLeft: 5,
-      paddingRight: 5,
-  }, 
   description: {
+    fontSize: 14
+  },
+  informationContainer: {
+    paddingLeft: 5,
+    paddingRight: 5,
+    justifyContent: 'space-around'
   }
 });

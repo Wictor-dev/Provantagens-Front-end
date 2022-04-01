@@ -9,7 +9,7 @@ type SearchProps = {
 export function SearchBar({ placeholder } : SearchProps){
     return (
         <View style={styles.container}>
-            <TextInput placeholder={placeholder}  />
+            <TextInput placeholder={placeholder} style={{fontSize: 18}}  />
             <Ionicons name="search" size={20} />
         </View>
     )

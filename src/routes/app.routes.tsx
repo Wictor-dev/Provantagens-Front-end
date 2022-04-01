@@ -8,6 +8,7 @@ import { Home } from "../pages/Home";
 
 import { Offer } from "../pages/Offer";
 import { Perfil } from "../pages/Perfil";
+import { View } from "react-native";
 
 export type RootStackParamList = {
     HomeScreen: undefined;
@@ -31,20 +32,23 @@ export default function Tabs(){
             screenOptions={({route}) => ({
                 tabBarIcon: ({focused, color, size}) => {
                     if (route.name === 'Home') {
-                        return <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={theme.colors.white} />
+                        return <View style={focused ? {opacity: 1} : {opacity: 0.5}}><Ionicons name={'home-sharp'} size={28} color={theme.colors.main11} /></View>
                     } else if (route.name === 'Favoritos') {
-                        return <AntDesign name={focused ? 'heart' : 'hearto'} size={size} color={theme.colors.white} />
+                        return <View style={focused ? {opacity: 1} : {opacity: 0.5}}><Ionicons name='heart' size={32} color={theme.colors.main11} /></View>
                     } else if (route.name === 'Perfil') {
-                        return <FontAwesome5 name={focused ? 'user-alt' : 'user'} size={size} color={theme.colors.white} /> 
+                        return <View style={focused ? {opacity: 1} : {opacity: 0.5}}><Ionicons name='person-circle' size={32} color={theme.colors.main11} /></View>
+                    } else {
+                        return <View style={focused ? {opacity: 1} : {opacity: 0.5}}><Ionicons name='cart' size={32} color={theme.colors.main11} /></View>
                     }
                 },
-                tabBarStyle: {backgroundColor: theme.colors.primary},
-                tabBarLabelStyle: {color: theme.colors.white},
+                tabBarStyle: {backgroundColor: theme.colors.main},
+                tabBarLabelStyle: {color: theme.colors.main12},
                 headerTitleAlign: 'center',
-                headerStyle: {backgroundColor: theme.colors.primary}
+                headerStyle: {backgroundColor: theme.colors.main}
             })}
         >
           <Tab.Screen name="Home" component={AppRoutes} options={{headerShown: false}}/>
+          <Tab.Screen name="Carrinho" component={Favorites} />
           <Tab.Screen name="Favoritos" component={Favorites} />
           <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
@@ -54,13 +58,13 @@ export default function Tabs(){
 function AppRoutes(){
     return (
         <Stack.Navigator screenOptions={{
-            cardStyle: {backgroundColor: theme.colors.background}
+            cardStyle: {backgroundColor: theme.colors.white}
         }}>
             {/* <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} /> */}
             <Stack.Screen name="HomeScreen" component={Home} options={{headerShown: false}} />
             <Stack.Screen name="Oferta" component={Offer} options={{
                 headerTitleAlign: 'center',
-                headerStyle: {backgroundColor: theme.colors.primary},
+                headerStyle: {backgroundColor: theme.colors.main},
             }} />
         </Stack.Navigator>
     )

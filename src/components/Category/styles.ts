@@ -4,12 +4,13 @@ import { theme } from "../../global/styles/theme";
 export const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        padding: 5
+        paddingLeft: 14,
+        paddingRight: 14
     },
     categoryIcon: {
-        backgroundColor: theme.colors.primaryLight,
+        backgroundColor: theme.colors.g01,
         width: 80,
-        height: 70,
+        height: 94,
         borderRadius: 5,
         display: "flex",
         justifyContent: "center",

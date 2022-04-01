@@ -12,24 +12,25 @@ export function Home(){
         <ScrollView style={styles.container}>
             <View style={styles.topSide}>
                 <SearchBar placeholder='Pesquisar serviços' />
-                <Banner />
+                {/* <Banner /> */}
             </View>
             <View>
                 <Categories />
             </View>
             <View style={styles.promotion}>
-                <Text style={styles.titlePromotion}>Promoções do dia</Text>
+                <View style={styles.information}>
+                    <Text style={styles.titlePromotion}>Promoções do dia</Text>
+                    <Text style={styles.expiration}>Restam 00:00:00</Text>
+                </View>
                 <Products />
             </View>
             <View style={styles.promotion}>
-                <Text style={styles.titlePromotion}>Serviços mais adquiridos</Text>
+                <View style={styles.information}>
+                    <Text style={styles.titlePromotion}>Serviços mais adquiridos</Text>
+                    <Text style={styles.expiration}>Restam 00:00:00</Text>
+                </View>
                 <Products />
             </View>
-            <View style={styles.promotion}>
-                <Text style={styles.titlePromotion}>Promoções do dia</Text>
-                <Products />
-            </View>
-
         </ScrollView>
     )
 }

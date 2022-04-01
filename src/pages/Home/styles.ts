@@ -9,16 +9,26 @@ export const styles = StyleSheet.create({
     topSide: {
         display: 'flex' ,
         alignItems: 'center',
-        backgroundColor: theme.colors.primary,
-        paddingTop: 50
+        backgroundColor: theme.colors.main,
+        paddingTop: 50,
+        paddingBottom: 20
     },
     promotion:{
-        marginTop: 20,
+        marginTop: 28,
         marginLeft: 10,
     },
-
     titlePromotion: {
         fontSize: 18
+    },
+    information: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingRight: 10,
+        marginBottom: 10
+    },
+    expiration: {
+        color: theme.colors.main07
     }
 
 })

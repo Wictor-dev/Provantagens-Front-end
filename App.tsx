@@ -18,7 +18,7 @@ export default function App() {
         <AuthProvider>
           <Routes />
         </AuthProvider>
-        <StatusBar style="auto" backgroundColor={theme.colors.primaryDarker} />
+        <StatusBar style="auto" backgroundColor={theme.colors.main10} />
       </NavigationContainer>
     // </View>
   );
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: theme.colors.background
+    backgroundColor: theme.colors.white
   }
 })
 

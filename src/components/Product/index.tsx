@@ -39,17 +39,18 @@ export function Product({
       <View style={styles.imageContainer}>
         <Image source={cover} style={styles.img} />
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{name}</Text>
-        <Text style={styles.title}>R$ {price.toFixed(2)}</Text>
+      <View style={styles.informationContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{name}</Text>
+        </View>
+        <View>
+          <Text style={styles.description}>{cutString(description, 45)}</Text>
+        </View>
+        <View>
+          <Text style={styles.title}>R$ {price.toFixed(2)}</Text>
+        </View>
       </View>
-      <View style={styles.categoryContainer}>
-        <View style={styles.circle}></View>
-        <Text style={styles.category}>{category}</Text>
-      </View>
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.description}>{cutString(description, 45)}</Text>
-      </View>
+      
     </TouchableOpacity>
   );
 }

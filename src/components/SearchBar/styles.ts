@@ -5,14 +5,14 @@ export const styles = StyleSheet.create({
     container: {
         width: '90%',
         height: 38,
-        borderRadius: 10,
+        borderRadius: 5,
         backgroundColor: theme.colors.white,
         flexDirection: 'row',
         alignItems: 'center',
         paddingLeft: 10,
         paddingRight: 10,
         justifyContent: 'space-between',
-        ...theme.shadow
+        // ...theme.shadow
         // elevation: 10,
         // shadowColor: '#00000054',
         // shadowRadius: 13.16,

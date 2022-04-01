@@ -42,7 +42,7 @@ export function Offer(){
                     <Text style={{marginLeft: 5}}>(55)</Text>
                 </View>
                 <View style={{marginTop: 20, alignItems: 'center'}}>
-                    <Button color={theme.colors.red} title="ADICIONAR" />
+                    <Button color={theme.colors.red} title="ADERIR" onPress={() => {}} />
 
                 </View>
             </View>

@@ -9,6 +9,17 @@ export const theme = {
         background: "#FCF2E1",
         white: "#fff",
         black: "#000",
+        g01: "#E0E0E0",
+        g09: "#666666",
+        g10: "#525252",
+
+        main: '#F5731D',
+        main07: '#DC6313',
+        main08: '#D05A0B',
+        main09: '#B54805',
+        main10: '#993807',
+        main11: '#612000',
+        main12: '#2B0E00'
     },
 
     shadow: {

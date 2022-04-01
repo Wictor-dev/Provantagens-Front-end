@@ -11,8 +11,8 @@ export function Category({icon, title}: IconProps) {
     <View style={styles.container}>
       <View style={styles.categoryIcon}>
         {icon}
+        <Text style={{fontSize: 14}}>{title}</Text>
       </View>
-      <Text>{title}</Text>
     </View>
   );
 }
