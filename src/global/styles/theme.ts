@@ -9,17 +9,30 @@ export const theme = {
         background: "#FCF2E1",
         white: "#fff",
         black: "#000",
-        g01: "#E0E0E0",
+        g01: "#FAFAFA",
         g09: "#666666",
         g10: "#525252",
 
+        main04: '#FFA238',
+        main05: '#FF8F28',
         main: '#F5731D',
         main07: '#DC6313',
         main08: '#D05A0B',
         main09: '#B54805',
         main10: '#993807',
         main11: '#612000',
-        main12: '#2B0E00'
+        main12: '#2B0E00',
+
+        blue10: '#003F43',
+        blue09: '#005257',
+        blue08: '#007F86',
+        blue07: '#009FA8',
+        blue06: '#19B9C2',
+        blue05: '#1BCED9',
+        blue04: '#1DE9F5',
+        blue03: '#6FF6FF',
+        blue02: '#A8FAFF',
+        blue01: '#CEFCFF'
     },
 
     shadow: {

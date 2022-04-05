@@ -9,13 +9,13 @@ import { Home } from "../pages/Home";
 import { Offer } from "../pages/Offer";
 import { Perfil } from "../pages/Perfil";
 import { View } from "react-native";
+import { Cart } from "../pages/Cart";
 
 export type RootStackParamList = {
     HomeScreen: undefined;
     Oferta: {
         name: string
         price: number
-        category: string
         description: string
         cover: any
     };
@@ -48,7 +48,7 @@ export default function Tabs(){
             })}
         >
           <Tab.Screen name="Home" component={AppRoutes} options={{headerShown: false}}/>
-          <Tab.Screen name="Carrinho" component={Favorites} />
+          <Tab.Screen name="Carrinho" component={Cart} />
           <Tab.Screen name="Favoritos" component={Favorites} />
           <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>

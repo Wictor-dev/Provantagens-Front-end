@@ -10,10 +10,14 @@ import { useEffect, useState } from "react";
 type ProductProp = {
     descricao: string,
     preco: string,
-    nota: string 
+    nota: string,
 }
 
-export function Products(){
+type ProductsProps = {
+    inCart?: boolean
+}
+
+export function Products({inCart = false} : ProductsProps){
     const [products, setProducts] = useState<ProductProp[]>([])
 
     async function loadProducts(){
@@ -30,61 +34,25 @@ export function Products(){
         loadProducts()
     }, [])
     return (
-        <View>
+        <View style={{paddingLeft: 5,paddingRight: 10}}>
             {products?.length > 0 && (
                     <FlatList
                         data={products}
-                        horizontal
+                        horizontal={!inCart}
                         renderItem={ ({item})  => {
                             return (
                                 <Product
                                     name="Fone de ouvido"
                                     price={Number(item?.preco)}
-                                    category="Tecnologia"
                                     description={item?.descricao}
                                     cover={logo}
+                                    inCart={inCart}
                                 />
                             )
                         }}
                     />
 
             )}
-            {/* <Product 
-                name="Fone de ouvido" 
-                price={38.99} 
-                category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro parceiro"
-                cover={logo}
-            />
-            <Product 
-                name="Fone de ouvido" 
-                price={38.99} 
-                category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro"
-                cover={require('../../assets/public/images/product.jpg')}
-            />
-            <Product 
-                name="Fone de ouvido" 
-                price={38.99} 
-                category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro"
-                cover={require('../../assets/public/images/product.jpg')}
-            />
-            <Product 
-                name="Fone de ouvido" 
-                price={38.99} 
-                category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro"
-                cover={require('../../assets/public/images/product.jpg')}
-            />
-            <Product 
-                name="Fone de ouvido" 
-                price={38.99} 
-                category="Tecnologia" 
-                description="Fones de ouvido da Razer, super mega impactantes top demais meu parceiro"
-                cover={require('../../assets/public/images/product.jpg')}
-            /> */}
-
         </View>
     )
 }

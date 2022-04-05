@@ -2,16 +2,9 @@ import { StyleSheet } from "react-native";
 import { theme } from "../../global/styles/theme";
 
 export const styles = StyleSheet.create({
-  container: {
-    width: 170,
-    height: 240,
-    borderRadius: 10,
-    borderWidth: 0.5,
-    margin: 5,
-    backgroundColor: theme.colors.white
-  },
   imageContainer: {
     height: 150,
+    paddingRight: 10,
     width: "100%",
   },
   img: {
