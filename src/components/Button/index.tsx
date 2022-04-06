@@ -4,12 +4,13 @@ import {theme} from '../../global/styles/theme'
 type ButtonProps = {
     color: string,
     title: string,
-    onPress: () => void
+    onPress: () => void,
+    colorText: string
 }
-export function Button({color, title, onPress}: ButtonProps){
+export function Button({color, title, onPress, colorText = 'white'}: ButtonProps){
     return (
         <Container color={color} onPress={onPress}>
-            <Title>{title}</Title>
+            <Title color={colorText}>{title}</Title>
         </Container>
     )
 }
@@ -22,10 +23,16 @@ const Container = styled.TouchableOpacity<ContainerProps>`
     background-color: ${props => props.color};
     align-items: center;
     padding: 10px 10px;
-    border-radius: 20px;
+    border-radius: 10px;
 `
 
-const Title = styled.Text`
-    color: ${theme.colors.white};
+type TitleProps = {
+    color: string
+}
+
+const Title = styled.Text<TitleProps>`
+    /* color: ${props => props.color}; */
     font-size: 24px;
+    font-weight: bold;
+    color: ${props => props.color};
 `

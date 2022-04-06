@@ -28,7 +28,7 @@ export function SignUp() {
             <View>
                 <View style={{ marginBottom: 20 }}>
                     <Input 
-                    label="Nome" 
+                    label="CPF" 
                     icon={<Ionicons name='person' size={20} />} 
                     placeholder="Digite o nome" 
                     maxLength={50} 
@@ -36,7 +36,7 @@ export function SignUp() {
                     handleState={setName}
                 />
                 </View>
-                <View style={{ marginBottom: 20 }}>
+                {/* <View style={{ marginBottom: 20 }}>
                     <Input 
                     label="Email" 
                     icon={<Ionicons name="mail" size={20} />} 
@@ -54,10 +54,10 @@ export function SignUp() {
                     maxLength={8} 
                     state={password}
                     handleState={setPassword}
-                />
+                /> */}
             </View>
             <View style={{marginTop: 50, alignItems: 'center'}}>
-                <Button title="CONTINUE" color={theme.colors.primary} onPress={() => navigation.navigate('ContinueSignUp', {name, password, mail})} />
+                <Button title="CONTINUE" color={theme.colors.main} colorText={theme.colors.main11} onPress={() => navigation.navigate('ContinueSignUp', {name, password, mail})} />
             </View>
             <View style={{justifyContent: 'center', marginTop: 33, flexDirection: 'row'}}>
                 <Text>Já possui conta?</Text>
@@ -75,7 +75,8 @@ const Container = styled.View`
 `
 
 const TitleText = styled.Text`
-    font-size: 38px;
+    font-size: 36px;
     align-self: center;
     margin-bottom: 50px;
+    color: ${theme.colors.g01};
 `

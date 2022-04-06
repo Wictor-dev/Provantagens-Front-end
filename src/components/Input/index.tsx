@@ -17,18 +17,22 @@ type InputProps = {
 
 export function Input({ label, placeholder, icon, password = false, maxLength, state, handleState, disabled = false}: InputProps) {
     const [textVisible, setTextVisible] = useState(password)
+    const [count, setCount] = useState(1)
     const handleVisibility = () => {
         setTextVisible(!textVisible)
     }
 
-    return (
-        <Container>
-            <Text>{label}</Text>
+    function handleCount(){
+        setCount(count + 1)
+    }
 
-            <InputArea style={{ ...theme.shadow }}>
-                {icon}
+    return (
+        <Container style={{borderBottomColor: '#2b2b2b', borderBottomWidth: 2}} onPress={handleCount} count={count}>
+            <Text style={{color: theme.colors.g06, fontWeight: 'bold', fontSize: 16}}>{label}</Text>
+
+            <InputArea>
+
                 <TextInput
-                    placeholder={placeholder}
                     secureTextEntry={textVisible}
                     style={password ? { marginLeft: 10, fontSize: 18, width: '85%' } : { marginLeft: 10, fontSize: 18, width: '100%' }}
                     maxLength={maxLength}
@@ -46,15 +50,21 @@ export function Input({ label, placeholder, icon, password = false, maxLength, s
     );
 }
 
-const Container = styled.View`
+type ContainerProps = {
+    count: number
+}
+const Container = styled.TouchableOpacity<ContainerProps>`
   width: 100%;
+  flex-direction: row;
+  align-items: center;
+  ${props => props.count%2 == 0 && 'flex-direction: column;'}
+  ${props => props.count%2 == 0 && 'align-items: flex-start;'}
 `;
 
 const InputArea = styled.View`
     flex-direction: row;
     align-items: center;
     /* justify-content: space-between; */
-    background-color: ${theme.colors.white};
     border-radius: 10px;
     padding: 10px;
 `;

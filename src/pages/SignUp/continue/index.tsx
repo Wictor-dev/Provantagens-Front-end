@@ -102,7 +102,7 @@ export function ContinueSignUp() {
                 </View>
             </View>
             <View style={{marginTop: 50, alignItems: 'center'}}>
-                <Button title="CADASTRAR" color={theme.colors.primary} onPress={() => {navigation.navigate('FinishSignUp')}} />
+                <Button title="CADASTRAR" color={theme.colors.primary} colorText={theme.colors.main11} onPress={() => {navigation.navigate('FinishSignUp')}} />
             </View>
             <View style={{justifyContent: 'center', marginTop: 33, flexDirection: 'row'}}>
                 <Text>Já possui conta?</Text>

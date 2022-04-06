@@ -17,7 +17,9 @@ export default function AuthRoutes() {
     return (
         <Stack.Navigator screenOptions={{
             headerTitleStyle: {display: 'none'},
-            cardStyle: {backgroundColor: theme.colors.white}
+            headerStyle: {backgroundColor: theme.colors.g11} ,
+            headerShadowVisible: false,
+            cardStyle: {backgroundColor: theme.colors.g11}
         }}>
             <Stack.Screen name="LogIn" component={LogIn} />
             <Stack.Screen name="SignIn" component={SignUp} />
