@@ -6,8 +6,8 @@ import { Ionicons } from '@expo/vector-icons'
 import React, { useState } from "react";
 type InputProps = {
     label: string;
-    placeholder: string;
-    icon: any;
+    placeholder?: string;
+    icon?: any;
     password?: boolean;
     maxLength: number;
     state?: string;
@@ -30,21 +30,21 @@ export function Input({ label, placeholder, icon, password = false, maxLength, s
         <Container style={{borderBottomColor: '#2b2b2b', borderBottomWidth: 2}} onPress={handleCount} count={count}>
             <Text style={{color: theme.colors.g06, fontWeight: 'bold', fontSize: 16}}>{label}</Text>
 
-            <InputArea>
-
+            <InputArea count={count}>
                 <TextInput
                     secureTextEntry={textVisible}
-                    style={password ? { marginLeft: 10, fontSize: 18, width: '85%' } : { marginLeft: 10, fontSize: 18, width: '100%' }}
+                    style={password ? {fontSize: 18, width: '90%', marginRight: 'auto' } : {fontSize: 18, width: '100%',}}
                     maxLength={maxLength}
                     value={state}
                     onChangeText={handleState}
                     editable={!disabled}
+                    onPressIn={handleCount}
                 />
-                {textVisible ? (
+                {count%2 == 0 && (textVisible ? (
                     <Ionicons name="ios-eye" size={20} onPress={handleVisibility} style={password ? undefined : {display: 'none'}} />
                 ) : (
                     <Ionicons name="ios-eye-off" size={20} onPress={handleVisibility} style={password ? undefined : {display: 'none'}} />
-                )}
+                ))}
             </InputArea>
         </Container>
     );
@@ -54,17 +54,22 @@ type ContainerProps = {
     count: number
 }
 const Container = styled.TouchableOpacity<ContainerProps>`
-  width: 100%;
+  max-width: 100%;
   flex-direction: row;
   align-items: center;
   ${props => props.count%2 == 0 && 'flex-direction: column;'}
   ${props => props.count%2 == 0 && 'align-items: flex-start;'}
 `;
 
-const InputArea = styled.View`
+type InputAreaProps = {
+    count: number
+}
+
+const InputArea = styled.View<InputAreaProps>`
     flex-direction: row;
     align-items: center;
     /* justify-content: space-between; */
-    border-radius: 10px;
-    padding: 10px;
+    padding: 10px 10px 10px 0;
+    ${props => props.count%2 == 0 && 'padding: 10px 0;'}
+    max-width: 100%;
 `;

@@ -44,7 +44,7 @@ export function LogIn() {
                 />
             </View>
             <View style={{marginTop: 50, alignItems: 'center'}}>
-                <Button title="Entrar" color={theme.colors.primary} onPress={()=>{logIn(email)}} />
+                <Button title="Entrar" color={theme.colors.main} colorText={theme.colors.main11} onPress={()=>{logIn(email)}} />
             </View>
             <View style={{justifyContent: 'center', marginTop: 33, flexDirection: 'row'}}>
                 <Text>Ainda não possui conta?</Text>
@@ -65,4 +65,6 @@ const TitleText = styled.Text`
     font-size: 38px;
     align-self: center;
     margin-bottom: 50px;
+    font-weight: bold;
+    color: ${theme.colors.g01}
 `

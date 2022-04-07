@@ -23,7 +23,10 @@ export default function AuthRoutes() {
         }}>
             <Stack.Screen name="LogIn" component={LogIn} />
             <Stack.Screen name="SignIn" component={SignUp} />
-            <Stack.Screen name="ContinueSignUp" component={ContinueSignUp} />
+            <Stack.Screen name="ContinueSignUp" component={ContinueSignUp} options={{
+                headerTitle: 'Cadastro',
+                headerTitleStyle: {display: 'flex', fontSize: 36, color: theme.colors.g01},
+            }} />
             <Stack.Screen name="FinishSignUp" component={FinishSignUp} />
         </Stack.Navigator>
 
