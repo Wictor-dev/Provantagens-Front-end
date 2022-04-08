@@ -19,7 +19,7 @@ type ContainerProps = {
     color: string
 }
 const Container = styled.TouchableOpacity<ContainerProps>`
-    width: 60%;
+    width: 100%;
     background-color: ${props => props.color};
     align-items: center;
     padding: 10px 10px;

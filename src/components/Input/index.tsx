@@ -39,6 +39,7 @@ export function Input({ label, placeholder, icon, password = false, maxLength, s
                     onChangeText={handleState}
                     editable={!disabled}
                     onPressIn={handleCount}
+                    onBlur={() => setCount(1)}
                 />
                 {count%2 == 0 && (textVisible ? (
                     <Ionicons name="ios-eye" size={20} onPress={handleVisibility} style={password ? undefined : {display: 'none'}} />

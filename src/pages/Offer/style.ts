@@ -37,4 +37,19 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
+    menuBottom: {
+        width: '100%',
+        maxWidth: '100%',
+        borderTopColor: theme.colors.g03, 
+        borderTopWidth: 1, 
+        flexDirection: 'row',
+        padding: 15
+    },
+    iconsArea: {
+        flexDirection: 'row',
+        width: '40%',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginRight: 10,
+    }
 })

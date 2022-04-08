@@ -25,8 +25,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>()
 const Tab = createBottomTabNavigator();
-
-export default function Tabs(){
+function Tabs(){
     return (
         <Tab.Navigator
             screenOptions={({route}) => ({
@@ -47,7 +46,7 @@ export default function Tabs(){
                 headerStyle: {backgroundColor: theme.colors.main}
             })}
         >
-          <Tab.Screen name="Home" component={AppRoutes} options={{headerShown: false}}/>
+          <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
           <Tab.Screen name="Carrinho" component={Cart} />
           <Tab.Screen name="Favoritos" component={Favorites} />
           <Tab.Screen name="Perfil" component={Perfil} />
@@ -55,16 +54,17 @@ export default function Tabs(){
     )
 }
 
-function AppRoutes(){
+export default function AppRoutes(){
     return (
         <Stack.Navigator screenOptions={{
             cardStyle: {backgroundColor: theme.colors.white}
         }}>
             {/* <Stack.Screen name="MenuBottom" component={Tabs} options={{headerShown: false}} /> */}
-            <Stack.Screen name="HomeScreen" component={Home} options={{headerShown: false}} />
+            <Stack.Screen name="HomeScreen" component={Tabs} options={{headerShown: false}} />
             <Stack.Screen name="Oferta" component={Offer} options={{
                 headerTitleAlign: 'center',
                 headerStyle: {backgroundColor: theme.colors.main},
+                
             }} />
         </Stack.Navigator>
     )

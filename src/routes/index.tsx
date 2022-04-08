@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ActivityIndicator, View } from "react-native";
 import { useAuth } from "../contexts/authContexts";
+import AppRoutes from "./app.routes";
 import Tabs from "./app.routes";
 import AuthRoutes from "./auth.routes";
 
@@ -14,6 +15,6 @@ export default function Routes(){
         )
     }
 
-    return isSigned ? <Tabs /> : <AuthRoutes />
+    return isSigned ? <AppRoutes /> : <AuthRoutes />
 
 }

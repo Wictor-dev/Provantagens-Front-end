@@ -67,6 +67,7 @@ export function ContinueSignUp() {
                     <Input 
                         label="Data de nascimento" 
                         maxLength={10} 
+                        state={birthday}
                         handleState={setBirthday}
                     />
                 </View>
@@ -74,12 +75,6 @@ export function ContinueSignUp() {
                     <Input
                         label="Telefone"
                         maxLength={11}
-                    />
-                </View>
-                <View style={{marginBottom: 20}}>
-                    <Input
-                        label="Email"
-                        maxLength={50}
                     />
                 </View>
                 <View style={{marginBottom: 20}}>
@@ -120,11 +115,12 @@ export function ContinueSignUp() {
     )
 }
 
-const Container = styled.View`
+const Container = styled.ScrollView`
     max-width: 100%;
     height: 80%;
-    justify-content: center;
+    /* justify-content: center; */
     padding: 0 15px;
+    margin-bottom: 50px;
 `
 
 const TitleText = styled.Text`
