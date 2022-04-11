@@ -15,9 +15,10 @@ type ProductProp = {
 
 type ProductsProps = {
     inCart?: boolean
+    inFavorites?: boolean
 }
 
-export function Products({inCart = false} : ProductsProps){
+export function Products({inCart = false, inFavorites = false} : ProductsProps){
     const [products, setProducts] = useState<ProductProp[]>([])
 
     async function loadProducts(){
@@ -38,7 +39,8 @@ export function Products({inCart = false} : ProductsProps){
             {products?.length > 0 && (
                     <FlatList
                         data={products}
-                        horizontal={!inCart}
+                        numColumns={inFavorites ? 2 : 1}
+                        horizontal={inFavorites? false : !inCart}
                         renderItem={ ({item})  => {
                             return (
                                 <Product

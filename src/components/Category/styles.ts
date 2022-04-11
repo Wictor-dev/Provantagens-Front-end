@@ -9,6 +9,8 @@ export const styles = StyleSheet.create({
     },
     categoryIcon: {
         backgroundColor: theme.colors.g01,
+        borderColor: theme.colors.g03,
+        borderWidth: 1,
         width: 80,
         height: 94,
         borderRadius: 5,

@@ -44,9 +44,9 @@ export function Product({
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{name}</Text>
         </View>
-        <View>
+        <DescriptionContainer>
           <Text style={styles.description}>{cutString(description, 45)}</Text>
-        </View>
+        </DescriptionContainer>
         <View>
           <Text style={styles.title}>R$ {price.toFixed(2)}</Text>
         </View>
@@ -65,6 +65,13 @@ const Container = styled.TouchableOpacity<ContainerProps>`
   height: 240px;
   border-radius: 10px;
   border-width: 0.5px;
+  border-color: ${theme.colors.g03};
   margin: 5px;
   background-color: ${theme.colors.white};
+`
+
+const DescriptionContainer = styled.View`
+  height: 30%;
+  max-height: 30%;
+  margin-top: 0;
 `

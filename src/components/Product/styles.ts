@@ -30,11 +30,12 @@ export const styles = StyleSheet.create({
       marginLeft: 2
   },
   description: {
-    fontSize: 14
+    fontSize: 14,
+    color: theme.colors.g09
   },
   informationContainer: {
     paddingLeft: 5,
     paddingRight: 5,
-    justifyContent: 'space-around'
+    // justifyContent: 'space-around'
   }
 });

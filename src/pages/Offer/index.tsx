@@ -31,15 +31,16 @@ export function Offer(){
                 <View style={styles.content}>
                     <Text style={styles.offerLimit}>Essa oferta acaba em 13:25:59</Text>
                     <Text style={styles.title}>{route.params.name}</Text>
+                    <View style={styles.separator} />
                     <Text style={styles.description}>{cutString(route.params.description, 100)}</Text>
                     <Text style={styles.price}>R$ {route.params.price.toFixed(2)}</Text>
                     <View style={styles.starsContainer}>
                         <View style={styles.starsContainer}>
-                            <FontAwesome name="star"  color={theme.colors.yellow}/>
-                            <FontAwesome name="star"  color={theme.colors.yellow}/>
-                            <FontAwesome name="star"  color={theme.colors.yellow}/>
-                            <FontAwesome name="star"  color={theme.colors.yellow}/>
-                            <FontAwesome name="star"  color={theme.colors.yellow}/>
+                            <FontAwesome name="star" size={20}  color={theme.colors.yellow}/>
+                            <FontAwesome name="star" size={20}   color={theme.colors.yellow}/>
+                            <FontAwesome name="star" size={20}   color={theme.colors.yellow}/>
+                            <FontAwesome name="star" size={20}   color={theme.colors.yellow}/>
+                            <FontAwesome name="star" size={20}   color={theme.colors.yellow}/>
                         </View>
                         <Text style={{marginLeft: 5}}>(55)</Text>
                     </View>

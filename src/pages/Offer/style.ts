@@ -7,7 +7,8 @@ export const styles = StyleSheet.create({
     },
     imgContainer:{
         width: '100%',
-        height: 300
+        height: 300,
+        marginBottom: 24
     },
     img: {
         width: '100%',
@@ -19,19 +20,32 @@ export const styles = StyleSheet.create({
         display: 'flex'
     },
     title: {
-        fontWeight: '400',
-        fontSize: 24,
+        fontWeight: '600',
+        fontSize: 32,
+        lineHeight: 32,
     },
     description: {
-        fontSize: 18
+        fontSize: 18,
+        marginBottom: 8
+    },
+    separator: {
+        width: '100%',
+        height: 1,
+        backgroundColor: theme.colors.g02,
+        marginTop: 4,
+        marginBottom: 16
     },
     offerLimit: {
-        color: theme.colors.red,
-        alignSelf: 'flex-end'
+        color: theme.colors.main09,
+        fontSize: 16,
+        alignSelf: 'flex-end',
+        marginBottom: 12
     },
     price: {
         marginTop: 5,
-        fontSize: 24
+        fontSize: 24,
+        fontWeight: '600',
+        color: theme.colors.main09
     },
     starsContainer: {
         flexDirection: 'row',
@@ -50,6 +64,6 @@ export const styles = StyleSheet.create({
         width: '40%',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginRight: 10,
+        marginRight: 10,    
     }
 })
